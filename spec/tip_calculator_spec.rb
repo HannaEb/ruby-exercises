@@ -30,7 +30,7 @@ describe 'TipCalculator' do
   end
 
   describe '#calculate_total' do
-    it 'calculated the total amount of the bill' do
+    it 'calculates the total amount of the bill' do
       subject.calculate_tip
       subject.calculate_total
       expect(subject.total).to eq(11.5)
@@ -43,6 +43,6 @@ describe 'TipCalculator' do
       subject.calculate_total
       expect(subject.print_bill).to eq('Tip: £1.50, Total: £11.50')
     end
-  end 
+  end
 
 end
