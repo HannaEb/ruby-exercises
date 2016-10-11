@@ -1,11 +1,21 @@
 
-puts 'What is the bill amount?'
-@bill_amount = gets.to_f
+begin
+  puts 'What is the bill amount?'
+  @bill_amount = Integer(gets)
+rescue
+  puts 'Please enter a valid amount.'
+  retry
+end
 
-puts 'What is the tip rate?'
-@tip_rate = gets.to_f
+begin
+  puts 'What is the tip rate?'
+  @tip_rate = Integer(gets)
+rescue
+  puts 'Please enter a valid rate.'
+  retry
+end
 
-@tip = @bill_amount * (@tip_rate / 100)
+@tip = @bill_amount.to_f * (@tip_rate.to_f / 100)
 
 @total = @bill_amount + @tip
 
